@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: password
+  host: localhost
+
+development:
+  <<: *default
+  database: nomster-final_development
+
+test:
+  <<: *default
+  database: nomster-final_test
+
+production:
+  <<: *default
+  database: nomster-final_production
+  # username: nomster-final
+  # password: <%= ENV['NOMSTER-FINAL_DATABASE_PASSWORD'] %>
