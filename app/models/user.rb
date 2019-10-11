@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :places
   #created association - places connect to user
+  has_many :comments
 end
