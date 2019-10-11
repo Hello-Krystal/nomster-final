@@ -1,5 +1,7 @@
 # lesson 4: build a new controller for the root page to live and have the root go to the index action
 class PlacesController < ApplicationController
+  #Before filters are code that executes before the code in our controller runs
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @places = Place.all
@@ -12,7 +14,7 @@ class PlacesController < ApplicationController
   end
 
    def create
-    Place.create(place_params) #sends def place_params values to the database
+    current_user.places.create(place_params) #creates place connected with user and sends def place_params values to the database
     redirect_to root_path #the page we want to send the user to
   end
 
