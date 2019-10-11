@@ -59,4 +59,10 @@ if you make a mistake you can undo the last migration by doing
 `` rake db:rollback ``
 then you can adjust the migration and run the migration again
 
+## $ Rails console
+we can add an item to our database by using the rails console
+Place.create(name: 'ENTER NAME HERE', address: 'ENTER ADDRESS HERE', description: 'ENTER DESCRIPTION 
+HERE')
+
+
 
