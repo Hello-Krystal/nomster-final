@@ -5,8 +5,8 @@
 <!-- booyah-box connects to master.scss -->
 <div class="booyah-box col-10 offset-1">
     <h1>
-        <%= place.name %>
-    </h1>
+        <%= link_to place.name, place_path(place) %>
+    </h1><br />
     <!-- heading pulls name variable from places_controller.rb @places = place.all -->
     <i>
         <%= place.address %></i><br /></br />

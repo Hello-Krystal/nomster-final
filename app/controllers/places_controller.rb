@@ -17,7 +17,28 @@ class PlacesController < ApplicationController
     current_user.places.create(place_params) #creates place connected with user and sends def place_params values to the database
     redirect_to root_path #the page we want to send the user to
   end
+ 
+  def show
+    @place = Place.find(params[:id])
+  end
 
+  def edit
+    @place = Place.find(params[:id])
+  end
+
+  def update
+    @place = Place.find(params[:id])
+    @place.update_attributes(place_params)
+    redirect_to root_path
+  end
+
+  def destroy
+    @place = Place.find(params[:id])
+    @place.destroy
+    redirect_to root_path
+  end
+
+end
   private
 
   def place_params #pulls the values of name, description and address from the place form
