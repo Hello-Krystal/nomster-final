@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>NomsterFinal</title>
+
+<head>
+    <title>Nomster App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
+<body>
+    <!-- Creates a Navbar with inverse property -->
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+        <!-- This makes the name of the app a clickable buttom that brings us back to the root page -->
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- This is the name of our site -->
+        <a class="navbar-brand" href="#">Nomster App</a>
+
+        <!-- this is a link that will perform an action -->
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <%= yield %>
-  </body>
+
+</body>
+
 </html>
