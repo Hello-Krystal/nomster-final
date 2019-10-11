@@ -18,14 +18,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- This is the name of our site -->
-        <a class="navbar-brand" href="#">Nomster App</a>
+        <!-- This links our site name to the main index page -->
+        <%= link_to 'Nomster App', root_path, class: 'navbar-brand' %>
 
         <!-- this is a link that will perform an action -->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <!-- adds plus icon to naviagation bar-->
+                    <%= link_to new_place_path, class: 'nav-link' do %>
+                    <!-- from gem install: font-awesome-->
+                    <i class="fa fa-plus-circle"></i>
+                    New Place
+                    <% end %>
                 </li>
             </ul>
         </div>
