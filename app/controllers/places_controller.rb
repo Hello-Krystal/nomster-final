@@ -38,7 +38,6 @@ class PlacesController < ApplicationController
     redirect_to root_path
   end
 
-end
   private
 
   def place_params #pulls the values of name, description and address from the place form
