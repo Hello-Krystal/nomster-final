@@ -9,6 +9,29 @@
         <%= @place.description %>
     </p>
 
+    <% if @place.latitude.present? && @place.longitude.present? %>
+
+    <script>
+    function initMap() {
+        var myLatLng = { lat: <%= @place.latitude %>, lng: <%= @place.longitude %> };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: myLatLng
+        });
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+        });
+    }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeHY8CDmXN4zhtQfMFj8MB6bTseFldpd8&callback=initMap">
+    </script>
+
+    <div id="map"></div>
+    <% end %>
+
     <!-- add link to edit page -->
     <div class="float-right">
         <% if current_user && current_user == @place.user %>
