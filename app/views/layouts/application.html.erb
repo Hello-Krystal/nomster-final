@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item">
-                    <!-- adds plus icon to naviagation bar-->
+                    <!-- adds plus icon to naviagation bar -->
                     <%= link_to new_place_path, class: 'nav-link' do %>
                     <!-- from gem install: font-awesome-->
                     <i class="fa fa-plus-circle"></i>
@@ -35,6 +35,17 @@
             </ul>
         </div>
     </nav>
+
+    <% if notice.present? %>
+    <p class="alert alert-info">
+        <%= notice %>
+    </p>
+    <% end %>
+    <% if alert.present? %>
+    <p class="alert alert-danger">
+        <%= alert %>
+    </p>
+    <% end %>
 
     <%= yield %>
 
