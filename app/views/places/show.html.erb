@@ -97,3 +97,11 @@
     </div>
     <% end %>
 </div>
+
+<!-- Adds Image Upload Form to page -->
+<div class="clear"></div>
+<%= simple_form_for @photos, url: '#' do |f| %>
+<%= f.input :caption %>
+<%= f.input :place_id %>
+<%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<% end %>
