@@ -63,8 +63,7 @@ This will create a migration file, which lets Rails know what new table(s) to cr
 
 On the bottom of the migration page add some indexes to ensure my lookups between the different database tables are fast.
 
-`` add_index :photos, [:user_id, :place_id]
-    add_index :photos, :place_id
+``add_index :photos, :place_id
   end ``
 
 In the terminal run the migration
