@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'places#index' #makes places controller the root/index page
   resources :places do #allows us to create a new place
     resources :comments, only: :create
+    resources :photos, only: :create
   end
 end

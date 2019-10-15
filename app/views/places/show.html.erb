@@ -100,8 +100,18 @@
 
 <!-- Adds Image Upload Form to page -->
 <div class="clear"></div>
-<%= simple_form_for @photos, url: '#' do |f| %>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
 <%= f.input :caption %>
-<%= f.input :place_id %>
-<%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<%= f.input :picture %>
+<%= f.submit "Add Photo", class: 'btn btn-primary' %>
 <% end %>
+
+<!-- Allows User to see caption -->
+<div class="row">
+    <% @place.photos.each do |photo| %>
+    <div>
+        <%= image_tag photo.picture, :class => "img-responsive" %>
+        <%= photo.caption %>
+    </div>
+    <% end %>
+</div>
