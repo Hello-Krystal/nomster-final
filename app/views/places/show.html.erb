@@ -100,19 +100,27 @@
     <% end %>
 </div>
 
+<br />
+<hr />
 <!-- Adds Image Upload Form to page -->
-<div class="clear"></div>
-<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-<%= f.input :caption %>
-<%= f.input :picture %>
-<%= f.submit "Add Photo", class: 'btn btn-primary' %>
-<% end %>
+<div class="col-10 offset-1">
+    <div class="clear"></div>
+    <h1 class="float-left">Photos</h1>
+    <br /><br />
+
+    <div>
+        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <%= f.input :caption %>
+        <%= f.input :picture %>
+        <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+        <% end %>
+    </div>
+</div>
 
 <br />
 <hr />
 <!-- Allows User to see photo and caption -->
 <div class="col-10 offset-1">
-    <h1 class="float-left">Photos</h1>
     <div class="clear"></div>
     <br />
     <% @place.photos.each do |photo| %>
