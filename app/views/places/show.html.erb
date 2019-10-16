@@ -84,7 +84,6 @@
 <!-- Shows all comments for each place on the places show page 
     <h1>Comments Old</h1> -->
 
-<br />
 <div class="row">
     <% @place.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
@@ -109,8 +108,13 @@
 <%= f.submit "Add Photo", class: 'btn btn-primary' %>
 <% end %>
 
-<!-- Allows User to see caption -->
-<div class="row">
+<br />
+<hr />
+<!-- Allows User to see photo and caption -->
+<div class="col-10 offset-1">
+    <h1 class="float-left">Photos</h1>
+    <div class="clear"></div>
+    <br />
     <% @place.photos.each do |photo| %>
     <div>
         <%= image_tag photo.picture, :class => "img-responsive" %>
