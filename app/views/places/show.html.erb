@@ -124,13 +124,11 @@
 
 <!-- Puts photos on the page -->
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-    <h1 class="pull-left">Photos</h1>
-    <div class="clear"></div>
-    <br />
-    <% @place.photos.each do |photo| %>
-    <div class="col-xs-12 col-sm-6">
-        <%= image_tag photo.picture, :class => "img-responsive" %>
+    <h1>Photos</h1>
+    <blockquote>
+        <% @place.photos.each do |photo|%>
+        <%= image_tag photo.picture, class: 'img-fluid' %>
         <%= photo.caption %>
-    </div>
-    <% end %>
+        <% end %>
+    </blockquote>
 </div>
