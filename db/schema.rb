@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2019_10_15_192751) do
     t.integer "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "picture"
     t.index ["place_id"], name: "index_photos_on_place_id"
   end
 
