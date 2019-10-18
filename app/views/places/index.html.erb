@@ -83,4 +83,7 @@
 <% end %>
 
 <!-- Lesson 12 challenge step 2. add will paginate to index -->
-<% will_paginate @places %>
+<div class="page-pagination">
+    <br style="clear:both;" />
+    <%= will_paginate @places, params: @will_paginate_params, class: 'paginate' %>
+</div>
