@@ -9,6 +9,8 @@
     domain: 'heroku.com',
     enable_starttls_auto: true
   }
+
+  config.active_storage.service = :amazon
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { host: 'https://nomster-final.herokuapp.com/' }
   # Code is not reloaded between requests.
