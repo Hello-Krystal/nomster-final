@@ -11,4 +11,4 @@ Rails.application.configure do
   }
 
   # more code here
-end
+end 
