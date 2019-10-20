@@ -32,7 +32,6 @@
     <div id="map"></div>
     <% end %>
     <br />
-    <br />
     <!-- map -->
 
     <!-- Buttons -->
@@ -48,9 +47,28 @@
         <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger'%>
         <% end %>
     </div>
+    <br />
+    <!-- Puts photos on the page -->
+    <h1 class="pull-left">Photos</h1>
+    <div class="clear"></div>
+    <hr />
+    <% @place.photos.each do |photo|%>
+    <div class="photo-column">
+        <%= image_tag photo.picture_url.to_s, class: 'img-fluid' %>
+        <blockquote class="photo-quote">
+            <%= photo.caption %>
+            <small>
+                <%= photo.user.email %>
+            </small>
+        </blockquote>
+    </div>
+    <% end %>
+    <br />
+    <!-- End of photo container -->
+    <div class="clear"></div>
 </div>
+
 <div class="clear"></div>
-<br />
 
 <!-- Modal comments -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -106,9 +124,8 @@
     <h1 class="pull-left">Comments</h1>
     <div class="clear"></div>
     <hr />
-    <br />
     <% @place.comments.each do |comment| %>
-    <div class="col-xs-12 col-sm-6">
+    <div>
         <blockquote>
             <% if comment.humanized_rating.present? %>
             <b>
@@ -124,22 +141,4 @@
 <div class="clear"></div>
 <br />
 
-<!-- Puts photos on the page -->
-<div class="booyah-box col-12 col-sm- col-xs-offset-1">
-    <h1 class="pull-left">Photos</h1>
-    <div class="clear"></div>
-    <hr />
-    <br />
-    <% @place.photos.each do |photo|%>
-    <div class="col-xs">
-        <%= image_tag photo.picture_url.to_s, class: 'img-fluid' %>
-        <blockquote>
-            <%= photo.caption %>
-            <small>
-                <%= photo.user.email %>
-            </small>
-        </blockquote>
-    </div>
-    <% end %>
-</div class="clear"><!-- End of photo container -->
 <br />
